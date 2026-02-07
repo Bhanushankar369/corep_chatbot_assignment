@@ -10,8 +10,8 @@ load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 
 
-from prompts import PROMPT
-from schema import COREP_SCHEMA
+from corep_assistant.prompts import PROMPT
+from corep_assistant.schema import COREP_SCHEMA
 
 embeddings = HuggingFaceEmbeddings(
     model_name="all-MiniLM-L6-v2"

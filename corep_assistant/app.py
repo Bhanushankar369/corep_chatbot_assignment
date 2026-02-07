@@ -1,8 +1,8 @@
 import streamlit as st
 import json
 
-from rag_pipeline import run_query
-from validator import validate
+from corep_assistant.rag_pipeline import run_query
+from corep_assistant.validator import validate
 
 st.title("COREP Reporting Assistant — Prototype")
 
