@@ -4,6 +4,11 @@ from langchain_community.vectorstores import FAISS
 
 from langchain_community.embeddings import HuggingFaceBgeEmbeddings
 
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+INDEX_PATH = os.path.join(BASE_DIR, "corep_index_genai")
+
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -29,4 +34,4 @@ db = FAISS.from_documents(
     embeddings
 )
 
-db.save_local("corep_index_genai")
+db.save_local(INDEX_PATH)

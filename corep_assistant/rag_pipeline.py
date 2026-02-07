@@ -8,6 +8,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 groq_api_key = os.getenv("GROQ_API_KEY")
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+INDEX_PATH = os.path.join(BASE_DIR, "corep_index_genai")
 
 
 from corep_assistant.prompts import PROMPT
@@ -20,7 +22,7 @@ embeddings = HuggingFaceEmbeddings(
 llm = ChatGroq(model="llama-3.1-8b-instant", groq_api_key=groq_api_key)
 
 db = FAISS.load_local(
-    "corep_index_genai",
+    INDEX_PATH,
     embeddings,
     allow_dangerous_deserialization=True
 )
