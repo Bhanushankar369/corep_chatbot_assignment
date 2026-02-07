@@ -1,6 +1,13 @@
 import streamlit as st
 import json
 
+import sys
+import os
+
+PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if PROJECT_ROOT not in sys.path:
+    sys.path.append(PROJECT_ROOT)
+
 from corep_assistant.rag_pipeline import run_query
 from corep_assistant.validator import validate
 
