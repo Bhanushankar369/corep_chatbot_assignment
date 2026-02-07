@@ -1,5 +1,6 @@
 langchain
-langchain_community
+langchain-community
+langchain-core
 faiss-cpu
 
 streamlit
@@ -8,3 +9,5 @@ pypdf
 tiktoken
 
 langchain-huggingface
+langchain-groq
+sentence-transformers
